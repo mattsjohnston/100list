@@ -1,15 +1,13 @@
-This is the classic [Backbone Todos app](http://addyosmani.github.com/todomvc),
-refactored to leverage CoffeeScript and Rails' Asset Pipeline,
-and backended by a Rails JSON API.
+This is the todo application built for managing 100 things you want to do before you die. It's based on [Backbone Todos app](http://addyosmani.github.com/todomvc),
+with a rails back-end.
 
 Install
 -------
 
-### If you don't already know this dance: ###
 
-    git clone git://github.com/addyosmani/backbone-boilerplates.git
+    git clone https://github.com/mattsjohnston/100list
 
-    cd backbone-boilerplates/option6_rails_coffeescript/
+    cd 100list
 
 make sure mongodb is running and that the database in config/mongoid.yml is correct. Then...
 
@@ -17,11 +15,4 @@ make sure mongodb is running and that the database in config/mongoid.yml is corr
 
     rails server
 
-    open http://localhost:3000
-
-### For a _really_ fun time ###
-
-Check [http://localhost:3000/todos.json](http://localhost:3000/todos.json)
-while you use the Backbone app to see the data updating.
-All communication between Backbone and Rails is over the API;
-front and back ends are completely decoupled.
+open [http://localhost:3000](http://localhost:3000)
