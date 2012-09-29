@@ -1,0 +1,99 @@
++keyframes(undulate-large)
+  0%
+    margin-top: 0
+  50%
+    margin-top: -20px
+  100%
+    margin-top: 0
++keyframes(undulate-medium)
+  0%
+    margin-top: 0
+  50%
+    margin-top: -10px
+  100%
+    margin-top: 0
++keyframes(undulate-small)
+  0%
+    margin-top: 0
+  50%
+    margin-top: -4px
+  100%
+    margin-top: 0
++keyframes(fade-in-to-right)
+  0%
+    margin: -20px 0 0 -100px
+    opacity: 0
+  100%
+    margin: 0 0 0 0
+    opacity: 1
++keyframes(fade-in-to-left)
+  0%
+    margin: -20px -100px 0 0
+    opacity: 0
+  100%
+    margin: 0 0 0 0
+    opacity: 1
+
+#header
+  background: url(image_path('bright-fade-bg.png')) no-repeat center top
+
+  #logo
+    width: 240px
+    height: 260px
+    margin: 0 auto
+    padding: 11px 0 42px
+    position: relative
+
+    .cloud
+      position: absolute
+      top: 33px
+      left: 36px
+      width: 186px
+      height: 127px
+      background: url(image_path('cloud.png')) no-repeat 0 0
+      +animation(undulate-large 5s infinite ease-in-out)
+
+    .dot-large
+      position: absolute
+      top: 149px
+      left: 158px
+      width: 28px
+      height: 28px
+      background: url(image_path('dot-large.png')) no-repeat 0 0
+      +animation(undulate-medium 5s .3s infinite ease-in-out)
+
+    .dot-small
+      position: absolute
+      top: 171px
+      left: 152px
+      width: 21px
+      height: 22px
+      background: url(image_path('dot-small.png')) no-repeat 0 0
+      +animation(undulate-small 5s .6s infinite ease-in-out)
+
+    .logo
+      position: absolute
+      top: 171px
+      left: 0
+      width: 240px
+      height: 93px
+      background: url(image_path('logo.png')) no-repeat 0 0
+
+  .clouds1
+    position: absolute
+    width: 572px
+    height: 218px
+    background: url(image_path('clouds-1.png')) no-repeat
+    top: 0
+    left: 0
+    +animation(fade-in-to-right 1.5s 1 cubic-bezier(0.215, 0.610, 0.355, 1.000))
+
+  .clouds2
+    position: absolute
+    width: 704px
+    height: 236px
+    background: url(image_path('clouds-2.png')) no-repeat
+    top: 0
+    right: 0
+    +animation(fade-in-to-left 2s 1 cubic-bezier(0.215, 0.610, 0.355, 1.000))
+

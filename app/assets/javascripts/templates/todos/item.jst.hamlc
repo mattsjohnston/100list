@@ -1,0 +1,6 @@
+%div{:class => "todo #{if @done then 'done' else ''}"}
+  %a{class: "check #{if @done then 'checked' else ''}", href: "javascript:void(0)"}
+  %a.remove{href: "javascript:void(0)"}
+  %label.todo-content= @content
+  %span.todo-destroy
+  %input.todo-input{:type => "text", :value => @content}/

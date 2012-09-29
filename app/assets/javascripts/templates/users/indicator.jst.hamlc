@@ -1,0 +1,4 @@
+.user-indicator
+  .outer
+    %a.inner{href: "javascript:void(0)"}
+      %img{src: "assets/users/#{@pic_url}"}

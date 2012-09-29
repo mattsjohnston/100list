@@ -1,0 +1,2 @@
+%a.user-pic{href: "javascript:void(0)", id: "user-pic-#{@_id}"}
+  %img{src: "assets/users/#{@pic_url}"}

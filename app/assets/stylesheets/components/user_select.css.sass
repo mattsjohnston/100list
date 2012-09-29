@@ -1,0 +1,59 @@
+#user-select
+  width: 104px
+  height: 104px
+  position: relative
+  margin: 0 auto 22px
+
+  .user-switch
+    position: absolute
+    width: 36px
+    height: 40px
+    top: 32px
+    margin: 0
+    background-repeat: no-repeat
+    opacity: .7
+    +transition(.1s all)
+
+    &:hover
+      opacity: 1
+
+  .user-switch-left
+    left: -42px
+    background-image: url(image_path('selector-left.png'))
+    background-position: 2px center
+    &:hover
+      background-position: 0 center
+
+  .user-switch-right
+    left: auto
+    right: -42px
+    background-image: url(image_path('selector-right.png'))
+    background-position: 0 center
+    &:hover
+      background-position: 2px center
+
+  .pic-frame
+    width: 104px
+    height: 104px
+    background: #fff
+    border-radius: 52px
+    +box-shadow(0 2px 8px rgba(0, 0, 0, .58))
+
+    .user-pic
+      position: absolute
+      width: 92px
+      height: 92px
+      top: 6px
+      left: 6px
+      opacity: 0
+      overflow: hidden
+      +transition(.8s opacity)
+
+      img
+        display: block
+        width: 92px
+        height: 92px
+        border-radius: 46px
+
+      &.current
+        opacity: 1
