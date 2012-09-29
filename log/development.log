@@ -88869,3 +88869,5 @@ Started GET "/assets/remove.png" for 127.0.0.1 at 2012-09-29 16:33:08 -0700
 Served asset /remove.png - 200 OK (0ms)
 MONGODB [DEBUG] Logging level is currently :debug which could negatively impact client-side performance. You should set your logging level no lower than :info in production.
 MONGODB (0ms) admin['$cmd'].find({:ismaster=>1}).limit(-1)
+MONGODB [DEBUG] Logging level is currently :debug which could negatively impact client-side performance. You should set your logging level no lower than :info in production.
+MONGODB (11ms) admin['$cmd'].find({:ismaster=>1}).limit(-1)
