@@ -1,7 +1,7 @@
 .container
   .row
     .span6.offset3
-      %form{"accept-charset" => "UTF-8", :action => "http://localhost:3000/lock/unlock", :method => "post"}
+      %form{"accept-charset" => "UTF-8", :action => "/lock/unlock", :method => "post"}
         %div{:style => "margin:0;padding:0;display:inline"}
           %label Enter password
           %input{:name => "utf8", :type => "hidden", :value => "✓"}
