@@ -61,6 +61,7 @@ $ ->
     createOnEnter: (e)->
       if e.keyCode == 13
         @currentUser.todos.create @newAttributes(@currentUser)
+        @currentUser.todos.sort()
         @input.val ''
 
     switchNextUser: (e) ->

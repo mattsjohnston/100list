@@ -1,0 +1,10 @@
+.container
+  .row
+    .span6.offset3
+      %h4 Gain access...
+      %form{"accept-charset" => "UTF-8", :action => "http://localhost:3000/lock/unlock", :method => "post"}
+        %div{:style => "margin:0;padding:0;display:inline"}
+          %input{:name => "utf8", :type => "hidden", :value => "✓"}
+            %input{:name => "authenticity_token", :type => "hidden", :value => "nTpgpR+D0sg4O2XKvdZ3UGpTWLK3UE6xDKoM32k2Iqk="}/
+        %input#password{:name => "password", :type => "password"}
+          %input{:name => "commit", :type => "submit", :value => "Unlock"}

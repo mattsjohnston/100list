@@ -65,12 +65,14 @@ class App.Views.Users.UserView extends Backbone.View
 
   # Add a single todo item to the list by creating a view for it, and
   # appending its element to the `<ul>`.
-  addOne: (todo)->
+  addOne: (todo) ->
     view = new window.App.Views.Todos.TodoView model: todo
     @$('.todo-list').append view.render().el
 
   # Add all items in the **Todos** collection at once.
-  addAll: -> @model.todos.each @addOne
+  addAll: ->
+    @$('.todo-list').empty()
+    @model.todos.each @addOne
 
   # Generate the attributes for a new Todo item.
   newAttributes: ->
