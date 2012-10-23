@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  lock
+  lock actions: ["todos#create", "todos#update", "todos#destroy", "users#create"]
 end

@@ -14,7 +14,9 @@ class App.Models.Todo extends Backbone.Model
   initialize: -> @set "content": @defaults.content if !@get 'content'
 
   # Toggle the `done` state of this todo item.
-  toggle: -> @save done: !@get 'done'
+  toggle: -> @save done: !@get 'done',
+    error: -> window.location = '/lock/refused'
 
   # Remove this Todo and delete its view.
-  clear: -> @destroy()
+  clear: -> @destroy
+    error: -> window.location = '/lock/refused'
