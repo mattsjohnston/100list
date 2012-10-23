@@ -1,8 +1,8 @@
 - if (@total)
   %p.todo-count
     You have
-    %b= 100 - @done
-    more awesome #{if 100 - @remaining == 1 then 'thing' else 'things'} to do and
-    %b= 100 - @total
+    %b= @remaining_incomplete
+    more awesome #{if @remaining_incomplete == 1 then 'thing' else 'things'} to do and
+    %b= @remaining_to_create
     more #{if 100 - @total == 1 then 'idea' else 'ideas'} to come up with.
-    %i That's kind of lame.
+    %i= @phrase

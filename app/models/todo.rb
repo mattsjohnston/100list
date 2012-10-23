@@ -3,7 +3,8 @@ class Todo
 
   belongs_to :user
 
-  field :content, type: String
-  field :done,    type: Boolean
-  field :order,   type: Integer
+  field :content,     type: String
+  field :done,        type: Boolean
+  field :order,       type: Integer
+  field :created_at,  type: Integer
 end

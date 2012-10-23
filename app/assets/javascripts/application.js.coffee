@@ -52,17 +52,18 @@ $ ->
 
     # Generate the attributes for a new Todo item.
     newAttributes: (user) ->
-      content:  @input.val()
-      order:    0
-      done:     false
-      user_id:  user.id
+      content:    @input.val()
+      order:      0
+      done:       false
+      user_id:    user.id
+      created_at: Date.now()
 
     # If you hit return in the main input field, create new **Todo** model
     createOnEnter: (e)->
       if e.keyCode == 13
         @currentUser.todos.create @newAttributes(@currentUser),
           error: -> window.location = '/lock/refused'
-        @currentUser.todos.sort()
+        # @currentUser.todos.sort()
         @input.val ''
 
     switchNextUser: (e) ->

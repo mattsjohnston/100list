@@ -15,7 +15,8 @@ class App.Collections.Todos extends Backbone.Collection
   nextOrder: -> if !@.length then 1 else @last().get('order') + 1
 
   # Todos are sorted by their original insertion order.
-  comparator: (todo)-> todo.get 'done'
+  comparator: (todo)->
+    [todo.get('done'), 1/todo.get('created_at')]
 
   fetch_by_user: (user) ->
     @fetch
