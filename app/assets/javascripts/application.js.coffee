@@ -47,10 +47,9 @@ $ ->
       @users.fetch()
 
     render: ->
-      id = @currentUserIndex || 0
-      @currentUser = @users.get(id)
+      @currentUser = if @currentUserIndex? then @users.get(@currentUserIndex) else @users.at(0)
       @switchToCurrentUser()
-      pub "select_user", id: id
+      pub "select_user", id: @currentUser.id
       @input = @$ '#new-todo'
 
       this
