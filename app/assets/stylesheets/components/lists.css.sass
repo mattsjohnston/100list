@@ -44,7 +44,7 @@
         margin: 0
         padding: 0
         background: #fff
-        +transition(.1s margin-left)
+        +transition((.1s margin-left, .1s padding-right))
 
         .todo
           padding: 16px 17px 16px
@@ -119,6 +119,7 @@
         &:hover
           background: #fbfbfb
           margin-left: -10px
+          padding-right: 10px
 
           .remove
             opacity: 1
