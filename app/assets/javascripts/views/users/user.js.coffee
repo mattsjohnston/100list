@@ -49,14 +49,14 @@ class App.Views.Users.UserView extends Backbone.View
     this
 
   renderStats: ->
-    done = @model.todos.done().length
-    remaining = done
-    # debugger
+    total = @model.todos.length
+    remaining_incomplete = Math.max 0, 100 - @model.todos.done().length
+    remaining_to_create = Math.max 0, 100 - total
 
     @$('.todo-stats').html @statsTemplate
-      total:      @model.todos.length
-      done:       done
-      remaining:  remaining
+      total:                  total
+      remaining_incomplete:   remaining_incomplete
+      remaining_to_create:    remaining_to_create
 
     # @allCheckbox.checked = !remaining
 
