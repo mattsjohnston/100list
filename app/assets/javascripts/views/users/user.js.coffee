@@ -28,6 +28,7 @@ class App.Views.Users.UserView extends Backbone.View
     @model.todos.bind 'add',    @addOne
     # @model.todos.bind 'reset',  @render
     @model.todos.bind 'all',  @renderStats
+    @model.todos.bind 'change',  @sort
     @model.todos.bind 'reset',  @addAll
 
     @model.todos.fetch_by_user @model
@@ -63,6 +64,8 @@ class App.Views.Users.UserView extends Backbone.View
   updateIndicator: ->
     @indicator.updatePosition
 
+  sort: =>
+    @model.todos.sort()
 
   # Add a single todo item to the list by creating a view for it, and
   # appending its element to the `<ul>`.
