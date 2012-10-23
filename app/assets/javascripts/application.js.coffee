@@ -92,7 +92,9 @@ $ ->
 
     bindUserPicSwitch: (user) ->
       sub "select_user", => @$('#user-select .user-pic').removeClass 'current'
-      sub "select_user_#{user.id}", => @$("#user-select #user-pic-#{user.id}").addClass 'current'
+      sub "select_user_#{user.id}", =>
+        @currentUser = user
+        @$("#user-select #user-pic-#{user.id}").addClass 'current'
 
     # Add all items in the **Users** collection at once.
     addAll: ->
