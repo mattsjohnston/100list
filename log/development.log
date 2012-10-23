@@ -98337,3 +98337,673 @@ Processing by TodosController#create as JSON
   Parameters: {"content"=>"yo", "done"=>false, "order"=>0, "user_id"=>"5062d00c7143758afa000004", "todo"=>{"content"=>"yo", "done"=>false, "order"=>0, "user_id"=>"5062d00c7143758afa000004", "action"=>"create", "controller"=>"todos"}}
 MONGODB (0ms) todos['todos'].insert([{"_id"=>BSON::ObjectId('5086d06871437567c5000004'), "content"=>"yo", "done"=>false, "order"=>0, "user_id"=>BSON::ObjectId('5062d00c7143758afa000004')}])
 Completed 201 Created in 2ms (Views: 0.5ms)
+
+
+Started PUT "/todos/5062d17a7143758feb000004" for 127.0.0.1 at 2012-10-23 10:18:15 -0700
+Processing by TodosController#update as JSON
+  Parameters: {"content"=>"Another one", "done"=>true, "_id"=>"5062d17a7143758feb000004", "order"=>1, "user_id"=>"5062d00c7143758afa000004", "id"=>"5062d17a7143758feb000004", "todo"=>{"content"=>"Another one", "done"=>true, "_id"=>"5062d17a7143758feb000004", "order"=>1, "user_id"=>"5062d00c7143758afa000004", "action"=>"update", "controller"=>"todos", "id"=>"5062d17a7143758feb000004"}}
+MONGODB (57ms) todos['todos'].find({:_id=>BSON::ObjectId('5062d17a7143758feb000004')}).limit(-1).sort([[:_id, :asc]])
+MONGODB (0ms) todos['todos'].update({"_id"=>BSON::ObjectId('5062d17a7143758feb000004')}, {"$set"=>{"done"=>true}})
+Completed 204 No Content in 61ms
+
+
+Started PUT "/todos/5065c7d2714375520e000006" for 127.0.0.1 at 2012-10-23 10:18:17 -0700
+Processing by TodosController#update as JSON
+  Parameters: {"content"=>"test", "done"=>true, "_id"=>"5065c7d2714375520e000006", "order"=>2, "user_id"=>"5062d00c7143758afa000004", "id"=>"5065c7d2714375520e000006", "todo"=>{"content"=>"test", "done"=>true, "_id"=>"5065c7d2714375520e000006", "order"=>2, "user_id"=>"5062d00c7143758afa000004", "action"=>"update", "controller"=>"todos", "id"=>"5065c7d2714375520e000006"}}
+MONGODB (0ms) todos['todos'].find({:_id=>BSON::ObjectId('5065c7d2714375520e000006')}).limit(-1).sort([[:_id, :asc]])
+MONGODB (0ms) todos['todos'].update({"_id"=>BSON::ObjectId('5065c7d2714375520e000006')}, {"$set"=>{"done"=>true}})
+Completed 204 No Content in 3ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Processing by TodosController#index as HTML
+  Rendered todos/_progress_bar.html.haml (0.1ms)
+  Rendered todos/index.html.haml within layouts/application (1.1ms)
+Compiled views/users/user.js  (145ms)  (pid 26565)
+Compiled application.js  (154ms)  (pid 26565)
+  Rendered layouts/_header.html.haml (0.2ms)
+Completed 200 OK in 428ms (Views: 427.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/json2.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /json2.js - 200 OK (0ms)
+
+
+Started GET "/assets/hamlcoffee.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /hamlcoffee.js - 200 OK (0ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /underscore.js - 200 OK (0ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /backbone.js - 200 OK (0ms)
+
+
+Started GET "/assets/lib/pubsub.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /lib/pubsub.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /application.js - 200 OK (28ms)
+
+
+Started GET "/assets/templates/users/list.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /templates/users/list.js - 200 OK (0ms)
+
+
+Started GET "/assets/templates/users/user_pic.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /templates/users/user_pic.js - 200 OK (0ms)
+
+
+Started GET "/assets/templates/todos/item.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /templates/todos/item.js - 200 OK (0ms)
+
+
+Started GET "/assets/templates/todos/stats.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /templates/todos/stats.js - 200 OK (0ms)
+
+
+Started GET "/assets/templates/users/indicator.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /templates/users/indicator.js - 200 OK (0ms)
+
+
+Started GET "/assets/models/todo.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /models/todo.js - 200 OK (0ms)
+
+
+Started GET "/assets/models/user.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /models/user.js - 200 OK (0ms)
+
+
+Started GET "/assets/collections/todos.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /collections/todos.js - 200 OK (0ms)
+
+
+Started GET "/assets/collections/users.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /collections/users.js - 200 OK (0ms)
+
+
+Started GET "/assets/views/todos/todo.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /views/todos/todo.js - 200 OK (0ms)
+
+
+Started GET "/assets/views/users/user_indicator.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /views/users/user_indicator.js - 200 OK (0ms)
+
+
+Started GET "/assets/views/users/user.js?body=1" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /views/users/user.js - 200 OK (1ms)
+
+
+Started GET "/assets/main-bg.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /main-bg.png - 200 OK (0ms)
+
+
+Started GET "/assets/dot-large.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /dot-large.png - 200 OK (0ms)
+
+
+Started GET "/assets/cloud.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /cloud.png - 200 OK (0ms)
+
+
+Started GET "/assets/clouds-2.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /clouds-2.png - 200 OK (0ms)
+
+
+Started GET "/assets/bright-fade-bg.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /bright-fade-bg.png - 200 OK (0ms)
+
+
+Started GET "/assets/clouds-1.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /clouds-1.png - 200 OK (0ms)
+
+
+Started GET "/assets/dot-small.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /dot-small.png - 200 OK (0ms)
+
+
+Started GET "/assets/bar-bg.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /bar-bg.png - 200 OK (0ms)
+
+
+Started GET "/assets/selector-left.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /selector-left.png - 200 OK (0ms)
+
+
+Started GET "/assets/selector-right.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /selector-right.png - 200 OK (0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Processing by UsersController#index as JSON
+MONGODB (0ms) todos['users'].find({})
+Completed 200 OK in 3ms (Views: 1.9ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/cloud-icon-small.png" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /cloud-icon-small.png - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062abe67143758afa000001" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062abe67143758afa000001"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062abe67143758afa000001')})
+Completed 200 OK in 4ms (Views: 2.3ms)
+
+
+Started GET "/assets/users/user-matt.jpg" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /users/user-matt.jpg - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062cfd97143758afa000003" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062cfd97143758afa000003"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062cfd97143758afa000003')})
+Completed 200 OK in 29ms (Views: 1.9ms)
+
+
+Started GET "/assets/users/user-jason.jpg" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Served asset /users/user-jason.jpg - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062d0277143758afa000005" for 127.0.0.1 at 2012-10-23 10:19:52 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062d0277143758afa000005"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062d0277143758afa000005')})
+Completed 200 OK in 5ms (Views: 3.8ms)
+
+
+Started GET "/assets/users/user-ryan.jpg" for 127.0.0.1 at 2012-10-23 10:19:53 -0700
+Served asset /users/user-ryan.jpg - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062d00c7143758afa000004" for 127.0.0.1 at 2012-10-23 10:19:53 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062d00c7143758afa000004"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062d00c7143758afa000004')})
+Completed 200 OK in 3ms (Views: 1.4ms)
+
+
+Started GET "/assets/users/user-sara.jpg" for 127.0.0.1 at 2012-10-23 10:19:53 -0700
+Served asset /users/user-sara.jpg - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062b8b27143758afa000002" for 127.0.0.1 at 2012-10-23 10:19:53 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062b8b27143758afa000002"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062b8b27143758afa000002')})
+Completed 200 OK in 4ms (Views: 2.6ms)
+
+
+Started GET "/assets/users/user-aaron.jpg" for 127.0.0.1 at 2012-10-23 10:19:53 -0700
+Served asset /users/user-aaron.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/remove.png" for 127.0.0.1 at 2012-10-23 10:19:54 -0700
+Served asset /remove.png - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2012-10-23 10:19:54 -0700
+Served asset /check.png - 200 OK (0ms)
+
+
+Started DELETE "/todos/506745847143751bf0000002" for 127.0.0.1 at 2012-10-23 10:20:01 -0700
+Processing by TodosController#destroy as JSON
+  Parameters: {"id"=>"506745847143751bf0000002"}
+MONGODB (0ms) todos['todos'].find({:_id=>BSON::ObjectId('506745847143751bf0000002')}).limit(-1).sort([[:_id, :asc]])
+MONGODB (0ms) todos['todos'].remove({:_id=>BSON::ObjectId('506745847143751bf0000002')})
+Completed 204 No Content in 3ms
+
+
+Started DELETE "/todos/5067990a71437530cf000008" for 127.0.0.1 at 2012-10-23 10:20:06 -0700
+Processing by TodosController#destroy as JSON
+  Parameters: {"id"=>"5067990a71437530cf000008"}
+MONGODB (0ms) todos['todos'].find({:_id=>BSON::ObjectId('5067990a71437530cf000008')}).limit(-1).sort([[:_id, :asc]])
+MONGODB (0ms) todos['todos'].remove({:_id=>BSON::ObjectId('5067990a71437530cf000008')})
+Completed 204 No Content in 2ms
+
+
+Started DELETE "/todos/5067990671437530cf000007" for 127.0.0.1 at 2012-10-23 10:20:11 -0700
+Processing by TodosController#destroy as JSON
+  Parameters: {"id"=>"5067990671437530cf000007"}
+MONGODB (0ms) todos['todos'].find({:_id=>BSON::ObjectId('5067990671437530cf000007')}).limit(-1).sort([[:_id, :asc]])
+MONGODB (0ms) todos['todos'].remove({:_id=>BSON::ObjectId('5067990671437530cf000007')})
+Completed 204 No Content in 2ms
+
+
+Started PUT "/todos/506798d971437530cf000006" for 127.0.0.1 at 2012-10-23 10:20:51 -0700
+Processing by TodosController#update as JSON
+  Parameters: {"content"=>"test5", "done"=>true, "_id"=>"506798d971437530cf000006", "order"=>0, "user_id"=>"5062abe67143758afa000001", "id"=>"506798d971437530cf000006", "todo"=>{"content"=>"test5", "done"=>true, "_id"=>"506798d971437530cf000006", "order"=>0, "user_id"=>"5062abe67143758afa000001", "action"=>"update", "controller"=>"todos", "id"=>"506798d971437530cf000006"}}
+MONGODB (0ms) todos['todos'].find({:_id=>BSON::ObjectId('506798d971437530cf000006')}).limit(-1).sort([[:_id, :asc]])
+MONGODB (0ms) todos['todos'].update({"_id"=>BSON::ObjectId('506798d971437530cf000006')}, {"$set"=>{"done"=>true}})
+Completed 204 No Content in 3ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Processing by TodosController#index as HTML
+  Rendered todos/_progress_bar.html.haml (0.1ms)
+  Rendered todos/index.html.haml within layouts/application (1.1ms)
+Compiled views/users/user.js  (148ms)  (pid 26565)
+Compiled application.js  (153ms)  (pid 26565)
+  Rendered layouts/_header.html.haml (0.1ms)
+Completed 200 OK in 378ms (Views: 377.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /application.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/json2.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /json2.js - 200 OK (0ms)
+
+
+Started GET "/assets/hamlcoffee.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /hamlcoffee.js - 200 OK (0ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /underscore.js - 200 OK (0ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /backbone.js - 200 OK (0ms)
+
+
+Started GET "/assets/lib/pubsub.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /lib/pubsub.js - 200 OK (0ms)
+
+
+Started GET "/assets/templates/todos/item.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /templates/todos/item.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /application.js - 200 OK (24ms)
+
+
+Started GET "/assets/templates/todos/stats.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /templates/todos/stats.js - 200 OK (0ms)
+
+
+Started GET "/assets/templates/users/indicator.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /templates/users/indicator.js - 200 OK (0ms)
+
+
+Started GET "/assets/templates/users/user_pic.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /templates/users/user_pic.js - 200 OK (0ms)
+
+
+Started GET "/assets/templates/users/list.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /templates/users/list.js - 200 OK (0ms)
+
+
+Started GET "/assets/models/todo.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /models/todo.js - 200 OK (0ms)
+
+
+Started GET "/assets/collections/users.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /collections/users.js - 200 OK (0ms)
+
+
+Started GET "/assets/views/todos/todo.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /views/todos/todo.js - 200 OK (0ms)
+
+
+Started GET "/assets/views/users/user.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /views/users/user.js - 200 OK (1ms)
+
+
+Started GET "/assets/models/user.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /models/user.js - 200 OK (0ms)
+
+
+Started GET "/assets/collections/todos.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /collections/todos.js - 200 OK (0ms)
+
+
+Started GET "/assets/views/users/user_indicator.js?body=1" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /views/users/user_indicator.js - 200 OK (0ms)
+
+
+Started GET "/assets/main-bg.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /main-bg.png - 200 OK (0ms)
+
+
+Started GET "/assets/dot-large.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /dot-large.png - 200 OK (0ms)
+
+
+Started GET "/assets/cloud.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /cloud.png - 200 OK (0ms)
+
+
+Started GET "/assets/bright-fade-bg.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /bright-fade-bg.png - 200 OK (0ms)
+
+
+Started GET "/assets/clouds-2.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /clouds-2.png - 200 OK (0ms)
+
+
+Started GET "/assets/clouds-1.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /clouds-1.png - 200 OK (0ms)
+
+
+Started GET "/assets/dot-small.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /dot-small.png - 200 OK (0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Processing by UsersController#index as JSON
+MONGODB (0ms) todos['users'].find({})
+Completed 200 OK in 4ms (Views: 2.1ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/selector-left.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /selector-left.png - 200 OK (0ms)
+
+
+Started GET "/assets/bar-bg.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /bar-bg.png - 200 OK (0ms)
+
+
+Started GET "/assets/selector-right.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /selector-right.png - 200 OK (0ms)
+
+
+Started GET "/assets/cloud-icon-small.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /cloud-icon-small.png - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062abe67143758afa000001" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062abe67143758afa000001"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062abe67143758afa000001')})
+Completed 200 OK in 5ms (Views: 2.0ms)
+
+
+Started GET "/assets/users/user-sara.jpg" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /users/user-sara.jpg - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062cfd97143758afa000003" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062cfd97143758afa000003"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062cfd97143758afa000003')})
+Completed 200 OK in 4ms (Views: 2.3ms)
+
+
+Started GET "/assets/users/user-matt.jpg" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /users/user-matt.jpg - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062d0277143758afa000005" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062d0277143758afa000005"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062d0277143758afa000005')})
+Completed 200 OK in 6ms (Views: 4.1ms)
+
+
+Started GET "/assets/users/user-ryan.jpg" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /users/user-ryan.jpg - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062d00c7143758afa000004" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062d00c7143758afa000004"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062d00c7143758afa000004')})
+Completed 200 OK in 3ms (Views: 2.0ms)
+
+
+Started GET "/todos/user/5062b8b27143758afa000002" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062b8b27143758afa000002"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062b8b27143758afa000002')})
+Completed 200 OK in 5ms (Views: 3.0ms)
+
+
+Started GET "/assets/users/user-aaron.jpg" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /users/user-aaron.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/users/user-jason.jpg" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /users/user-jason.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /check.png - 200 OK (0ms)
+
+
+Started GET "/assets/remove.png" for 127.0.0.1 at 2012-10-23 10:20:54 -0700
+Served asset /remove.png - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Processing by TodosController#index as HTML
+  Rendered todos/_progress_bar.html.haml (0.1ms)
+  Rendered todos/index.html.haml within layouts/application (1.1ms)
+Compiled templates/todos/stats.js  (166ms)  (pid 26565)
+Compiled views/users/user.js  (144ms)  (pid 26565)
+Compiled application.js  (149ms)  (pid 26565)
+  Rendered layouts/_header.html.haml (0.1ms)
+Completed 200 OK in 583ms (Views: 582.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /application.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/json2.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /json2.js - 200 OK (0ms)
+
+
+Started GET "/assets/hamlcoffee.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /hamlcoffee.js - 200 OK (0ms)
+
+
+Started GET "/assets/underscore.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /underscore.js - 200 OK (0ms)
+
+
+Started GET "/assets/backbone.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /backbone.js - 200 OK (0ms)
+
+
+Started GET "/assets/lib/pubsub.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /lib/pubsub.js - 200 OK (0ms)
+
+
+Started GET "/assets/templates/users/list.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /templates/users/list.js - 200 OK (0ms)
+
+
+Started GET "/assets/templates/todos/item.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /templates/todos/item.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /application.js - 200 OK (26ms)
+
+
+Started GET "/assets/templates/todos/stats.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /templates/todos/stats.js - 200 OK (1ms)
+
+
+Started GET "/assets/templates/users/indicator.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /templates/users/indicator.js - 200 OK (0ms)
+
+
+Started GET "/assets/templates/users/user_pic.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /templates/users/user_pic.js - 200 OK (0ms)
+
+
+Started GET "/assets/models/todo.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /models/todo.js - 200 OK (0ms)
+
+
+Started GET "/assets/views/todos/todo.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /views/todos/todo.js - 200 OK (0ms)
+
+
+Started GET "/assets/models/user.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /models/user.js - 200 OK (0ms)
+
+
+Started GET "/assets/views/users/user.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /views/users/user.js - 200 OK (1ms)
+
+
+Started GET "/assets/collections/todos.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /collections/todos.js - 200 OK (0ms)
+
+
+Started GET "/assets/collections/users.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /collections/users.js - 200 OK (0ms)
+
+
+Started GET "/assets/views/users/user_indicator.js?body=1" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /views/users/user_indicator.js - 200 OK (0ms)
+
+
+Started GET "/assets/main-bg.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /main-bg.png - 200 OK (0ms)
+
+
+Started GET "/assets/dot-large.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /dot-large.png - 200 OK (0ms)
+
+
+Started GET "/assets/bright-fade-bg.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /bright-fade-bg.png - 200 OK (0ms)
+
+
+Started GET "/assets/cloud.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /cloud.png - 200 OK (0ms)
+
+
+Started GET "/assets/clouds-2.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /clouds-2.png - 200 OK (0ms)
+
+
+Started GET "/assets/clouds-1.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /clouds-1.png - 200 OK (0ms)
+
+
+Started GET "/assets/dot-small.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /dot-small.png - 200 OK (0ms)
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /logo.png - 200 OK (0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Processing by UsersController#index as JSON
+MONGODB (0ms) todos['users'].find({})
+Completed 200 OK in 4ms (Views: 2.0ms)
+
+
+Started GET "/assets/bar-bg.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /bar-bg.png - 200 OK (0ms)
+
+
+Started GET "/assets/selector-left.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /selector-left.png - 200 OK (0ms)
+
+
+Started GET "/assets/selector-right.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /selector-right.png - 200 OK (0ms)
+
+
+Started GET "/assets/cloud-icon-small.png" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /cloud-icon-small.png - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062abe67143758afa000001" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062abe67143758afa000001"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062abe67143758afa000001')})
+Completed 200 OK in 5ms (Views: 2.0ms)
+
+
+Started GET "/assets/users/user-sara.jpg" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /users/user-sara.jpg - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062cfd97143758afa000003" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062cfd97143758afa000003"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062cfd97143758afa000003')})
+Completed 200 OK in 4ms (Views: 2.1ms)
+
+
+Started GET "/assets/users/user-matt.jpg" for 127.0.0.1 at 2012-10-23 10:21:39 -0700
+Served asset /users/user-matt.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/users/user-ryan.jpg" for 127.0.0.1 at 2012-10-23 10:21:40 -0700
+Served asset /users/user-ryan.jpg - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062d00c7143758afa000004" for 127.0.0.1 at 2012-10-23 10:21:40 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062d00c7143758afa000004"}
+MONGODB (15ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062d00c7143758afa000004')})
+Completed 200 OK in 18ms (Views: 16.9ms)
+
+
+Started GET "/todos/user/5062d0277143758afa000005" for 127.0.0.1 at 2012-10-23 10:21:40 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062d0277143758afa000005"}
+MONGODB (1ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062d0277143758afa000005')})
+Completed 200 OK in 7ms (Views: 5.6ms)
+
+
+Started GET "/assets/users/user-jason.jpg" for 127.0.0.1 at 2012-10-23 10:21:40 -0700
+Served asset /users/user-jason.jpg - 200 OK (0ms)
+
+
+Started GET "/todos/user/5062b8b27143758afa000002" for 127.0.0.1 at 2012-10-23 10:21:40 -0700
+Processing by TodosController#index_by_user as JSON
+  Parameters: {"user_id"=>"5062b8b27143758afa000002"}
+MONGODB (0ms) todos['todos'].find({:user_id=>BSON::ObjectId('5062b8b27143758afa000002')})
+Completed 200 OK in 4ms (Views: 2.8ms)
+
+
+Started GET "/assets/users/user-aaron.jpg" for 127.0.0.1 at 2012-10-23 10:21:40 -0700
+Served asset /users/user-aaron.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/check.png" for 127.0.0.1 at 2012-10-23 10:21:40 -0700
+Served asset /check.png - 200 OK (0ms)
+
+
+Started GET "/assets/remove.png" for 127.0.0.1 at 2012-10-23 10:21:40 -0700
+Served asset /remove.png - 200 OK (0ms)

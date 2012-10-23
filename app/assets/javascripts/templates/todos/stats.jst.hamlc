@@ -1,7 +1,7 @@
 - if (@total)
   %p.todo-count
     You have
-    %b= 100 - @remaining
+    %b= 100 - @done
     more awesome #{if 100 - @remaining == 1 then 'thing' else 'things'} to do and
     %b= 100 - @total
     more #{if 100 - @total == 1 then 'idea' else 'ideas'} to come up with.

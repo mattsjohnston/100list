@@ -50,7 +50,8 @@ class App.Views.Users.UserView extends Backbone.View
 
   renderStats: ->
     done = @model.todos.done().length
-    remaining = @model.todos.remaining().length
+    remaining = done
+    # debugger
 
     @$('.todo-stats').html @statsTemplate
       total:      @model.todos.length
