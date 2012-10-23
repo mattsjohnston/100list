@@ -35,6 +35,9 @@ $ ->
     initialize: ->
       _.bindAll @, 'addOne', 'addAll', 'render'
 
+      sub "select_user", (options) =>
+        @currentUserIndex = options.id
+
       @users = new window.App.Collections.Users
 
       @users.bind 'add',   @addOne
@@ -44,26 +47,27 @@ $ ->
       @users.fetch()
 
     render: ->
-      @currentUser = @users.at(0) unless @currentUser?
+      id = @currentUserIndex || 0
+      @currentUser = @users.get(id)
       @switchToCurrentUser()
+      pub "select_user", id: id
       @input = @$ '#new-todo'
 
       this
 
     # Generate the attributes for a new Todo item.
     newAttributes: (user) ->
-      content:    @input.val()
-      order:      0
-      done:       false
-      user_id:    user.id
-      created_at: Date.now()
+      content:  @input.val()
+      order:    0
+      done:     false
+      user_id:  user.id
 
     # If you hit return in the main input field, create new **Todo** model
     createOnEnter: (e)->
       if e.keyCode == 13
         @currentUser.todos.create @newAttributes(@currentUser),
           error: -> window.location = '/lock/refused'
-        # @currentUser.todos.sort()
+        @currentUser.todos.sort()
         @input.val ''
 
     switchNextUser: (e) ->
@@ -76,14 +80,13 @@ $ ->
 
     switchToCurrentUser: =>
       id = @currentUser.id
-      pub 'select_user', id: id
-      Router.navigate("users/" + id)
+      Router.navigate "users/" + id, trigger: true
 
     # switchToUser: (user) ->
 
     #   @$('#lists-container .user-list-container').removeClass 'current'
     #   user.get('view').$el.addClass 'current'
-        
+
 
     userPicTemplate: JST["templates/users/user_pic"]
 
@@ -109,7 +112,7 @@ $ ->
   App = new AppView
 
   AppRouter = Backbone.Router.extend
-    routes: 
+    routes:
       "users/:id": "getUser"
 
   Router = new AppRouter
@@ -119,4 +122,4 @@ $ ->
   Backbone.history.start()
 
   window.Router = Router
-  
+
