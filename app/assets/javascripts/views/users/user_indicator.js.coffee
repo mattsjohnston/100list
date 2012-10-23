@@ -24,7 +24,9 @@ class App.Views.Users.UserIndicatorView extends Backbone.View
     this
 
   selectUser: ->
-    pub 'select_user', id: @parent.model.id
+    id = @parent.model.id
+    pub 'select_user', id: id
+    Router.navigate("users/" + id)
 
   updateIndicator: ->
     @$el.css('left', "#{(@parent.model.todos.done().length / 100) * 91.3 + 2.3}%")

@@ -74,7 +74,9 @@ $ ->
       @switchToCurrentUser()
 
     switchToCurrentUser: =>
-      pub 'select_user', id: @currentUser.id
+      id = @currentUser.id
+      pub 'select_user', id: id
+      Router.navigate("users/" + id)
 
     # switchToUser: (user) ->
 
@@ -92,10 +94,11 @@ $ ->
       @bindUserPicSwitch user
 
     bindUserPicSwitch: (user) ->
+      id = user.id
       sub "select_user", => @$('#user-select .user-pic').removeClass 'current'
-      sub "select_user_#{user.id}", =>
+      sub "select_user_#{id}", =>
         @currentUser = user
-        @$("#user-select #user-pic-#{user.id}").addClass 'current'
+        @$("#user-select #user-pic-#{id}").addClass 'current'
 
     # Add all items in the **Users** collection at once.
     addAll: ->
@@ -103,3 +106,16 @@ $ ->
 
   # Finally, we kick things off by creating the **App**.
   App = new AppView
+
+  AppRouter = Backbone.Router.extend
+    routes: 
+      "users/:id": "getUser"
+
+  Router = new AppRouter
+  Router.on 'route:getUser', (id) ->
+    pub "select_user", id: id
+
+  Backbone.history.start()
+
+  window.Router = Router
+  
