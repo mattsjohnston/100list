@@ -1,4 +1,5 @@
 development:
-  uri: mongodb://localhost/todos
+  host: localhost
+  database: hundred-list
 production:
   uri: <%= ENV['MONGOHQ_URL'] %>
