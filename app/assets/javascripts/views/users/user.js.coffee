@@ -52,13 +52,13 @@ class App.Views.Users.UserView extends Backbone.View
     total = @model.todos.length
     remaining_incomplete = Math.max 0, 100 - @model.todos.done().length
     remaining_to_create = Math.max 0, 100 - total
+    phrases = ["Were you just born yesterday?", "That's pretty lame.", "You still need to get out more.", "Well, at least you're still young.", "You're getting the hang of this whole 'life' thing.", "More than halfway there. Hopefully you're younger than 50...", "You're quite the life veteran.", "Now you're just showing off.", "Blimey! You're almost there!", "Woohoo! You can officially die happy."]
 
     @$('.todo-stats').html @statsTemplate
       total:                  total
       remaining_incomplete:   remaining_incomplete
       remaining_to_create:    remaining_to_create
-
-    # @allCheckbox.checked = !remaining
+      phrase:                 phrases[Math.floor((100 - remaining_incomplete) / 10)]
 
   updateIndicator: ->
     @indicator.updatePosition
