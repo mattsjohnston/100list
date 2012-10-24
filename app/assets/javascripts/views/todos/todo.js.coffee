@@ -27,7 +27,7 @@ class App.Views.Todos.TodoView extends Backbone.View
 
   # Re-render the contents of the todo item.
   render: ->
-    $(@el).html @template @model.toJSON()
+    @$el.html(@template @model.toJSON())
     @input = @$ '.todo-input'
     @
 

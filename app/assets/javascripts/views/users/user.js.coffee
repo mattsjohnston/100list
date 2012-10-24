@@ -47,6 +47,8 @@ class App.Views.Users.UserView extends Backbone.View
     sub "select_user", => @$el.removeClass 'current'
     sub "select_user_#{@model.id}", => @$el.addClass 'current'
 
+    @setupSorting()
+
     this
 
   renderStats: ->
@@ -61,6 +63,11 @@ class App.Views.Users.UserView extends Backbone.View
       remaining_to_create:    remaining_to_create
       phrase:                 phrases[Math.floor((100 - remaining_incomplete) / 10)]
 
+  setupSorting: ->
+    @$('.todo-list').sortable
+      update: (e, ui) =>
+        $('.todo', e.target).each (i, item) =>
+          @model.todos.get($(item).data('todo-id')).set('order', i).save()
   updateIndicator: ->
     @indicator.updatePosition
 

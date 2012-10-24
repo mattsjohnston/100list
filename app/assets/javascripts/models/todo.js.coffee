@@ -10,6 +10,7 @@ class App.Models.Todo extends Backbone.Model
     content: 'empty todo...'
     done: false
     created_at: 0
+    order: 0
 
   # Ensure that each todo created has `content`.
   initialize: -> @set "content": @defaults.content if !@get 'content'

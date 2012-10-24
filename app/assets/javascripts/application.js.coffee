@@ -1,4 +1,5 @@
 #= require jquery
+#= require jquery.ui.sortable
 #= require json2
 #= require hamlcoffee
 #= require underscore

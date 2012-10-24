@@ -16,7 +16,15 @@ class App.Collections.Todos extends Backbone.Collection
 
   # Todos are sorted by their original insertion order.
   comparator: (todo)->
-    [todo.get('done'), 1/todo.get('created_at')]
+    [todo.get('done'), todo.get('order'), 1/todo.get('created_at')]
+
+  save_order: ->
+    $.ajax
+      type: 'POST'
+      dataType: 'JSON'
+      data: @pluck ['order', 'id']
+      success: (data) ->
+        debugger
 
   fetch_by_user: (user) ->
     @fetch

@@ -1,4 +1,4 @@
-%div{:class => "todo #{if @done then 'done' else ''}"}
+%div{:class => "todo #{if @done then 'done' else ''}", "data-todo-id" => @_id}
   %a{class: "check #{if @done then 'checked' else ''}", href: "javascript:void(0)"}
   %a.remove{href: "javascript:void(0)"}
   %label.todo-content= @content
