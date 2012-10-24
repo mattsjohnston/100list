@@ -47,7 +47,7 @@ class App.Views.Users.UserView extends Backbone.View
     sub "select_user", => @$el.removeClass 'current'
     sub "select_user_#{@model.id}", => @$el.addClass 'current'
 
-    @setupSorting()
+    # @setupSorting()
 
     this
 
