@@ -58,7 +58,7 @@ $ ->
     # Generate the attributes for a new Todo item.
     newAttributes: (user) ->
       content:  @input.val()
-      order:    0
+      order:    -1
       done:     false
       user_id:  user.id
 
