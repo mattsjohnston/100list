@@ -1,7 +1,7 @@
 App.Views.Users ||= {}
 
 class App.Views.Users.UserIndicatorView extends Backbone.View
-  
+
   template: JST["templates/users/indicator"]
 
   events:
@@ -24,7 +24,8 @@ class App.Views.Users.UserIndicatorView extends Backbone.View
     this
 
   selectUser: ->
-    pub 'select_user', id: @parent.model.id
+    id = @parent.model.id
+    Router.navigate "users/" + id, trigger: true
 
   updateIndicator: ->
     @$el.css('left', "#{(@parent.model.todos.done().length / 100) * 91.3 + 2.3}%")

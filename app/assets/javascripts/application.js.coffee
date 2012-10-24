@@ -36,6 +36,9 @@ $ ->
     initialize: ->
       _.bindAll @, 'addOne', 'addAll', 'render'
 
+      sub "select_user", (options) =>
+        @currentUserIndex = options.id
+
       @users = new window.App.Collections.Users
 
       @users.bind 'add',   @addOne
@@ -45,26 +48,26 @@ $ ->
       @users.fetch()
 
     render: ->
-      @currentUser = @users.at(0) unless @currentUser?
+      @currentUser = if @currentUserIndex? then @users.get(@currentUserIndex) else @users.at(0)
       @switchToCurrentUser()
+      pub "select_user", id: @currentUser.id
       @input = @$ '#new-todo'
 
       this
 
     # Generate the attributes for a new Todo item.
     newAttributes: (user) ->
-      content:    @input.val()
-      order:      0
-      done:       false
-      user_id:    user.id
-      created_at: Date.now()
+      content:  @input.val()
+      order:    0
+      done:     false
+      user_id:  user.id
 
     # If you hit return in the main input field, create new **Todo** model
     createOnEnter: (e)->
       if e.keyCode == 13
         @currentUser.todos.create @newAttributes(@currentUser),
           error: -> window.location = '/lock/refused'
-        # @currentUser.todos.sort()
+        @currentUser.todos.sort()
         @input.val ''
 
     switchNextUser: (e) ->
@@ -76,13 +79,14 @@ $ ->
       @switchToCurrentUser()
 
     switchToCurrentUser: =>
-      pub 'select_user', id: @currentUser.id
+      id = @currentUser.id
+      Router.navigate "users/" + id, trigger: true
 
     # switchToUser: (user) ->
 
     #   @$('#lists-container .user-list-container').removeClass 'current'
     #   user.get('view').$el.addClass 'current'
-        
+
 
     userPicTemplate: JST["templates/users/user_pic"]
 
@@ -94,10 +98,11 @@ $ ->
       @bindUserPicSwitch user
 
     bindUserPicSwitch: (user) ->
+      id = user.id
       sub "select_user", => @$('#user-select .user-pic').removeClass 'current'
-      sub "select_user_#{user.id}", =>
+      sub "select_user_#{id}", =>
         @currentUser = user
-        @$("#user-select #user-pic-#{user.id}").addClass 'current'
+        @$("#user-select #user-pic-#{id}").addClass 'current'
 
     # Add all items in the **Users** collection at once.
     addAll: ->
@@ -105,3 +110,16 @@ $ ->
 
   # Finally, we kick things off by creating the **App**.
   App = new AppView
+
+  AppRouter = Backbone.Router.extend
+    routes:
+      "users/:id": "getUser"
+
+  Router = new AppRouter
+  Router.on 'route:getUser', (id) ->
+    pub "select_user", id: id
+
+  Backbone.history.start()
+
+  window.Router = Router
+
